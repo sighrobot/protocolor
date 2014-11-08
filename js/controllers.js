@@ -150,7 +150,7 @@ app.controller('IP4Ctrl', function ($rootScope, $scope, $routeParams, Page) {
 
 	$scope.drawIPs = function() {
 		var el = document.getElementById('box');
-		var dimString = window.innerHeight-70 + 'px';
+		var dimString = window.innerWidth + 'px';
 
   		
   			var div = document.createElement('div');
@@ -167,6 +167,14 @@ app.controller('IP4Ctrl', function ($rootScope, $scope, $routeParams, Page) {
 
   			div.appendChild(a);
 			el.appendChild(div);
+/*
+      var divInfo = document.createElement('div');
+      div.className= 'ip';
+      div.style.width = dimString;
+      div.style.height = dimString;
+      divInfo.innerHTML = 'Hello world';
+
+      el.appendChild(divInfo);*/
 
   		
 	}

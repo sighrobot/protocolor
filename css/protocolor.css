@@ -5,8 +5,10 @@ div {
 }
 
 div#header, div#footer {
-	height:30px;margin:0;padding:5px;font-weight:bold;
+	height:45px;margin:0;padding:5px;font-weight:bold;
 }
+
+
 
 div#header{font-weight:bold;}
 div#header a, div#footer a {
