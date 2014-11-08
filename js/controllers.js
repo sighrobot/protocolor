@@ -8,7 +8,7 @@ function dim(w) {
 
 app.controller('IPCtrl', function ($rootScope, $scope, $routeParams, Page) {
 
-	$rootScope.ipString = '0.0.0.0 - 255.0.0.0';
+	$rootScope.ipString = '0.x.x.x - 255.x.x.x';
 	Page.setTitle($rootScope.ipString);
 
 	$scope.drawIPs = function() {
@@ -37,13 +37,8 @@ app.controller('IPCtrl', function ($rootScope, $scope, $routeParams, Page) {
 app.controller('IP1Ctrl', function ($rootScope, $scope, $routeParams, Page) {
 
 	$scope.n1 = $routeParams.n1;
-	$scope.n2 = $routeParams.n2;
-	$scope.n3 = $routeParams.n3;
-
-	if ($scope.n2 == undefined) $scope.n2 = 0;
-	if ($scope.n3 == undefined) $scope.n3 = 0;
 	
-	$rootScope.ipString = $scope.n1 + '.0.0.0 - ' + $scope.n1 + '.255.0.0';
+	$rootScope.ipString = $scope.n1 + '.0.x.x - ' + $scope.n1 + '.255.x.x';
 	Page.setTitle($rootScope.ipString);
 
 	$scope.drawIPs = function() {
@@ -76,11 +71,8 @@ app.controller('IP2Ctrl', function ($rootScope, $scope, $routeParams, Page) {
 
 	$scope.n1 = $routeParams.n1;
 	$scope.n2 = $routeParams.n2;
-	$scope.n3 = $routeParams.n3;
-	if ($scope.n2 == undefined) $scope.n2 = 0;
-	if ($scope.n3 == undefined) $scope.n3 = 0;
 	
-	$rootScope.ipString = $scope.n1 + '.' + $scope.n2 + '.0.0 - ' + $scope.n1 + '.' + $scope.n2 + '.255.0';
+	$rootScope.ipString = $scope.n1 + '.' + $scope.n2 + '.0.x - ' + $scope.n1 + '.' + $scope.n2 + '.255.x';
 	Page.setTitle($rootScope.ipString);
 
 	$scope.drawIPs = function() {
@@ -114,8 +106,6 @@ app.controller('IP3Ctrl', function ($rootScope, $scope, $routeParams, Page) {
 	$scope.n1 = $routeParams.n1;
 	$scope.n2 = $routeParams.n2;
 	$scope.n3 = $routeParams.n3;
-	if ($scope.n2 == undefined) $scope.n2 = 0;
-	if ($scope.n3 == undefined) $scope.n3 = 0;
 	
 	$rootScope.ipString = $scope.n1 + '.' + $scope.n2 + '.' + $scope.n3 + '.0 - ' + $scope.n1 + '.' + $scope.n2 + '.' + $scope.n3 + '.255';
 	Page.setTitle($rootScope.ipString);
@@ -134,14 +124,51 @@ app.controller('IP3Ctrl', function ($rootScope, $scope, $routeParams, Page) {
   			var a = document.createElement('a');
   			a.className = 'ip-link';
   			a.style.color = 'rgba(' + $scope.n1 + ',' + $scope.n2 +','+ $scope.n3 +', '+(1-i/255)+')';
-  			a.href = 'http://'+ $scope.n1 + '.'+ $scope.n2 + '.' + $scope.n3 + '.' + i;
-  			a.target = '_blank';
+  			a.href = '#/'+ $scope.n1 + '/'+ $scope.n2 + '/' + $scope.n3 + '/' + i;
   			a.innerHTML = i;
 
   			div.appendChild(a);
 			el.appendChild(div);
 
   		}
+	}
+
+	
+
+
+});
+
+app.controller('IP4Ctrl', function ($rootScope, $scope, $routeParams, Page) {
+
+	$scope.n1 = $routeParams.n1;
+	$scope.n2 = $routeParams.n2;
+	$scope.n3 = $routeParams.n3;
+	$scope.n4 = $routeParams.n4;
+	
+	$rootScope.ipString = $scope.n1 + '.' + $scope.n2 + '.' + $scope.n3 + '.' + $scope.n4;
+	Page.setTitle($rootScope.ipString);
+
+	$scope.drawIPs = function() {
+		var el = document.getElementById('box');
+		var dimString = window.innerHeight-70 + 'px';
+
+  		
+  			var div = document.createElement('div');
+  			div.className = 'ip';
+  			div.style.width = dimString;
+  			div.style.height = dimString;
+  			div.style.background = 'rgba(' + $scope.n1 + ',' + $scope.n2 +','+ $scope.n3 +', '+(1-$scope.n4/255)+')';
+
+  			var a = document.createElement('a');
+  			a.className = 'ip-link';
+  			a.style.color = 'rgba(' + $scope.n1 + ',' + $scope.n2 +','+ $scope.n3 +', '+(1-$scope.n4/255)+')';
+  			a.href = 'http://'+ $scope.n1 + '.'+ $scope.n2 + '.' + $scope.n3 + '.' + $scope.n4;
+  			a.target = '_blank';
+
+  			div.appendChild(a);
+			el.appendChild(div);
+
+  		
 	}
 
 	

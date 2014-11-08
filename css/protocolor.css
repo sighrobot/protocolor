@@ -1,3 +1,5 @@
+
+
 div {
 	margin:0;padding:0;
 }
@@ -20,7 +22,7 @@ div#header a:hover {
 	color:gray;
 }
 div.ip {float:left;margin:1px 1px 0 0;}
-div#box {float:left;width:100%;margin-bottom:5px;padding-left:1px;}
+div#box {float:left;width:100%;margin-bottom:5px;padding:0 0 1px 1px;}
 div.ip:hover {
 	opacity:;
 	border:2px solid white;

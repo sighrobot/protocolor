@@ -1,5 +1,4 @@
-var app = angular
-	.module('ipv4-directory', ['ngRoute', 'ngSanitize']);
+var app = angular.module('ipv4-directory', ['ngRoute', 'ngSanitize']);
 
 app.config(['$routeProvider', function ($routeProvider) {
 
@@ -19,6 +18,10 @@ app.config(['$routeProvider', function ($routeProvider) {
 	when('/:n1/:n2/:n3', {
 		templateUrl: 'ip.html',
 		controller: 'IP3Ctrl'
+	}).
+	when('/:n1/:n2/:n3/:n4', {
+		templateUrl: 'ip.html',
+		controller: 'IP4Ctrl'
 	}).
 	otherwise({redirectTo: '/'});
 
