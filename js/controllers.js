@@ -150,7 +150,7 @@ app.controller('IP4Ctrl', function ($rootScope, $scope, $routeParams, Page) {
 
 	$scope.drawIPs = function() {
 		var el = document.getElementById('box');
-		var dimString = window.innerWidth + 'px';
+		var dimString = window.innerWidth-1 + 'px';
 
   		
   			var div = document.createElement('div');
