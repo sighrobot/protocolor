@@ -3,7 +3,7 @@ function TitleCtrl($scope, Page) {
 }
 
 function dim(w) {
-	return ((w.innerWidth-17)/16);
+	return ((w.innerWidth-33)/32);
 }
 
 app.controller('IPCtrl', function ($rootScope, $scope, $routeParams, Page) {
@@ -150,7 +150,7 @@ app.controller('IP4Ctrl', function ($rootScope, $scope, $routeParams, Page) {
 
 	$scope.drawIPs = function() {
 		var el = document.getElementById('box');
-		var dimString = window.innerWidth-2 + 'px';
+		var dimString = window.innerWidth/4 + 'px';
 
   		
   			var div = document.createElement('div');
@@ -167,14 +167,22 @@ app.controller('IP4Ctrl', function ($rootScope, $scope, $routeParams, Page) {
 
   			div.appendChild(a);
 			el.appendChild(div);
-/*
-      var divInfo = document.createElement('div');
-      div.className= 'ip';
-      div.style.width = dimString;
-      div.style.height = dimString;
-      divInfo.innerHTML = 'Hello world';
+//<iframe src="http://nytimes.com"></iframe>
+      var iFrame = document.createElement('iframe');
+      iFrame.style.width = 3*window.innerWidth/4-3 + 'px';
+      iFrame.style.height = window.innerWidth/4 + 'px';
+      iFrame.src = 'http://' + $rootScope.ipString;
 
-      el.appendChild(divInfo);*/
+      el.appendChild(iFrame);
+
+      var em = document.createElement('em');
+      em.innerHTML ="If no webpage is visible, the server either doesn't exist or won't serve a cross-origin request.";
+      em.style.float="right";
+      em.style.fontSize="6pt";
+      em.style.paddingRight ="5px";
+      em.style.height="0px";
+
+      el.appendChild(em);
 
   		
 	}

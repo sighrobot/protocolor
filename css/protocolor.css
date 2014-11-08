@@ -1,11 +1,11 @@
 
 
-div {
+div, iframe {
 	margin:0;padding:0;
 }
 
 div#header, div#footer {
-	height:45px;margin:0;padding:5px;font-weight:bold;
+	clear:left;height:45px;margin:20px 0 20px 0;padding:5px;font-weight:bold;
 }
 
 
@@ -23,7 +23,7 @@ div#header a:hover {
 	text-decoration:none;
 	color:gray;
 }
-div.ip {float:left;margin:1px 1px 0 0;}
+div.ip, iframe {float:left;margin:1px 1px 0 0;}
 div#box {float:left;width:100%;margin-bottom:5px;padding:0 0 1px 1px;}
 div.ip:hover {
 	opacity:;
@@ -32,3 +32,7 @@ div.ip:hover {
 
 a.ip-link {display:block;width:100%;height:100%;text-decoration:none;text-align:center;}
 a.ip-link:hover {color: /*white*/ !important;}
+
+iframe {
+	border:0;
+}
