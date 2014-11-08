@@ -26,7 +26,7 @@ app.controller('IPCtrl', function ($rootScope, $scope, $routeParams, Page) {
   			a.className = 'ip-link';
   			a.style.color = 'rgba(' + i + ', 0, 0, 1)';
   			a.href = '#/'+i;
-  			a.innerHTML = i;
+  			//a.innerHTML = i;
 
   			div.appendChild(a);
 			el.appendChild(div);
@@ -56,7 +56,7 @@ app.controller('IP1Ctrl', function ($rootScope, $scope, $routeParams, Page) {
   			a.className = 'ip-link';
   			a.style.color = 'rgba(' + $scope.n1 + ',' + i +', 0, 1)';
   			a.href = '#/'+ $scope.n1 + '/'+ i;
-  			a.innerHTML = i;
+  			//a.innerHTML = i;
 
   			div.appendChild(a);
 			el.appendChild(div);
@@ -90,7 +90,7 @@ app.controller('IP2Ctrl', function ($rootScope, $scope, $routeParams, Page) {
   			a.className = 'ip-link';
   			a.style.color = 'rgba(' + $scope.n1 + ',' + $scope.n2 +','+ i +', 1)';
   			a.href = '#/'+ $scope.n1 + '/'+ $scope.n2 + '/' + i;
-  			a.innerHTML = i;
+  			//a.innerHTML = i;
 
   			div.appendChild(a);
 			el.appendChild(div);
@@ -125,7 +125,7 @@ app.controller('IP3Ctrl', function ($rootScope, $scope, $routeParams, Page) {
   			a.className = 'ip-link';
   			a.style.color = 'rgba(' + $scope.n1 + ',' + $scope.n2 +','+ $scope.n3 +', '+(1-i/255)+')';
   			a.href = '#/'+ $scope.n1 + '/'+ $scope.n2 + '/' + $scope.n3 + '/' + i;
-  			a.innerHTML = i;
+  			//a.innerHTML = i;
 
   			div.appendChild(a);
 			el.appendChild(div);
